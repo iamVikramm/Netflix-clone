@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "./axios";
+import { useEffect, useState } from "react";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import App2 from "./App2";
+import Loader from "./Loader";
+import EachMovie from "./EachMovie";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+    const [data,setdata] = useState([]);
+    const [loading,setLoading] = useState(true);
+
+    useEffect(()=>{
+      async function fetchData(){
+        const resp = await axios.get("/discover/tv?api_key=ea6530bd4c33e39c2b63a1ff8dff9064");
+        await setdata(resp.data.results);
+        setLoading(false)
+      }
+      fetchData();
+    },[])
+    console.log(data)
+    if(loading){
+        return(
+            <Loader />
+        )
+    }
+    return(
+        <BrowserRouter>
+        <Routes>
+            <Route path="/" element ={<App2 data={data}/>}></Route>
+            <Route path="/movies/:id" element={<EachMovie />} ></Route>
+        </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App;

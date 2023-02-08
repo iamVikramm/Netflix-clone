@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  background-color: black;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #d6d6d6;
+  border-radius: 50%;
+  border-top-color: red;
+  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+  margin-right: 10px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Navbar{
+  height: 10vmin;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+.nav-img-div{
+  height: 10vmin;
+  width: 17.5vmin;
+  margin-left: 3vmin;
+}
+.nav-img{
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.profile-img-div{
+  height: 4vmin;
+  width: 4vmin;
+  margin-right: 4vmin;
+}
+.profile-img{
+  height: 100%;
+  width: 100%;
+}
+.Header{
+  margin: 1%;
+  color:white;
+  display: flex;
+  align-items: center;
+}
+.header-content{
+  margin-left: 8%;
+}
+.header-content h1{
+  font-size: 8vmin;
+}
+.header-content h3{
+  font-size: 5vmin;
+}
+.header-content h5{
+  font-size: 2.2vmin;
+}
+.header-content p{
+  font-size: 2vmin;
+}
+.container{
+  margin:0 0 1.7% 0;
+  width: 150vmin;
+  margin-left: 8vmin;
+  display: flex;
+  flex-wrap: wrap;
+}
+.App{
+  margin-top: 2%;
+  width: 30vmin;
+  text-align: center;
   color: white;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
-.App-link {
-  color: #61dafb;
+.img-div{
+  height: 35vmin;
+  width: 100%;
+  overflow: hidden;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img{
+  height: 100%;
+  width: 100%;
+  transition:.7s all ease-in-out;
+  object-fit: contain;
+}
+.img-div:hover img{
+  transform: scale(1.15);
+  z-index: 1;
+}
+.title{
+  margin: 1%;
+  margin-top: 3%;
+}
+.title p{
+  margin: 0;
+  font-size: large;
+  font-family: "Montserrat";
 }
