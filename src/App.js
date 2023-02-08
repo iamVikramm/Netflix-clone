@@ -17,7 +17,6 @@ function App(){
       }
       fetchData();
     },[])
-    console.log(data)
     if(loading){
         return(
             <Loader />
@@ -26,8 +25,8 @@ function App(){
     return(
         <BrowserRouter basename="/Netflix-clone">
         <Routes>
-            <Route path="/Netflix-clone" element ={<App2 data={data}/>}></Route>
-            <Route path="/Netflix-clone/movies/:id" element={<EachMovie />} ></Route>
+            <Route path="/" element ={<App2 data={data}/>}></Route>
+            <Route path="/movies/:id" element={<EachMovie />} ></Route>
         </Routes>
         </BrowserRouter>
     )

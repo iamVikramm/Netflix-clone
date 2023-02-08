@@ -20,7 +20,7 @@ function App2(Data){
         {
           data.map(item=>{
             return(
-              <Movies item={item} />
+              <Movies key={item.id} item={item} />
             )
           })
         }
