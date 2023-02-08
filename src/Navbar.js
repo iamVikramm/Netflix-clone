@@ -2,7 +2,7 @@ function Navbar(){
     return(
         <div className="Navbar">
             <div className="nav-img-div">  
-                <a href="/">
+                <a href="/Netflix-clone">
                 <img href="/" className="nav-img" alt="nav-logo" src="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png"></img>
                 </a>
             </div>
